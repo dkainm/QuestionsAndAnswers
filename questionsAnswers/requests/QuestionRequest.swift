@@ -49,3 +49,40 @@ struct QuestionRequest {
     }
     
 }
+
+struct QuestionWithoutAnswerRequest {
+    
+    let resourceURL: URL
+    
+    init() {
+        
+        let resourceString = "https://sinspython.herokuapp.com/allQuestionNoAnswer"
+        guard let resourceURL = URL(string: resourceString) else {fatalError()}
+        
+        self.resourceURL = resourceURL
+        
+    }
+    
+    func getQuestions(completion: @escaping(Result<[NoAnsweredQuestionInfo], QuestionError>) -> Void) {
+        
+        let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, responce, error in
+            
+            guard let jsonData = data else {
+                completion(.failure(.noDataAvailable))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let questionsResponce = try decoder.decode([NoAnsweredQuestionInfo].self, from: jsonData)
+                completion(.success(questionsResponce))
+            } catch {
+                completion(.failure(.canNotProcessData))
+                print(error)
+            }
+            
+        }
+        dataTask.resume()
+    }
+    
+}

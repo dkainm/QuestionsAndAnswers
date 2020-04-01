@@ -1,26 +1,26 @@
 //
-//  ViewController.swift
+//  NoAnsweredViewController.swift
 //  questionsAnswers
 //
-//  Created by Alex Rudoi on 263//20.
+//  Created by Alex Rudoi on 14//20.
 //  Copyright © 2020 Alex Rudoi. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class NoAnsweredViewController: UIViewController {
+
     @IBOutlet weak var tv: UITableView!
     
-    var questionsArray = [QuestionInfo]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tv.reloadData()
-                self.navigationItem.title = "\(self.questionsArray.count) Questions found"
+    var questionsArray = [NoAnsweredQuestionInfo]() {
+            didSet {
+                DispatchQueue.main.async {
+                    self.tv.reloadData()
+                    self.navigationItem.title = "\(self.questionsArray.count) Questions found"
+                }
             }
         }
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         delegates()
@@ -30,12 +30,11 @@ class ViewController: UIViewController {
     func delegates() {
         tv.delegate = self
         tv.dataSource = self
-        tv.rowHeight = 80
-        tv.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "tableCell")
+        tv.register(UINib(nibName: "NoAnsweredTableViewCell", bundle: nil),forCellReuseIdentifier: "noAnsweredTableCell")
     }
-    
+        
     func getData() {
-        let questionRequest = QuestionRequest()
+        let questionRequest = QuestionWithoutAnswerRequest()
         questionRequest.getQuestions { result in
             switch result {
             case .failure(let error):
@@ -43,29 +42,28 @@ class ViewController: UIViewController {
             case .success(let questions):
                 self.questionsArray = questions
             }
+            
         }
     }
-    
-    
+        
+        
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
+extension NoAnsweredViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionsArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noAnsweredTableCell", for: indexPath) as! NoAnsweredTableViewCell
         
         let question = questionsArray[indexPath.row]
         
-        cell.config(question: question.question, answer: question.answer)
+        cell.config(question: question.question)
         
         return cell
     }
     
 }
-
-
-
