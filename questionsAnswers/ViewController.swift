@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     func delegates() {
         tv.delegate = self
         tv.dataSource = self
+        tv.rowHeight = 80
+        tv.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "tableCell")
     }
     
     func getData() {
@@ -54,12 +56,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
         
         let question = questionsArray[indexPath.row]
         
-        cell.textLabel?.text = question.question
-        cell.detailTextLabel?.text = question.answer
+        cell.config(question: question.question, answer: question.answer)
         
         return cell
     }

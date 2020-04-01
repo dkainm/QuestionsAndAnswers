@@ -7,14 +7,6 @@
 //
 import Foundation
 
-struct QuestionResponce: Decodable {
-    var responce: Questions
-}
-
-struct Questions: Decodable {
-    var questions: [QuestionInfo]
-}
-
 struct QuestionInfo: Decodable {
     var answer: String
     var question: String

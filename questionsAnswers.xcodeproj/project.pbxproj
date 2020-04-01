@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA99AD4B242F62F000B6A9C5 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99AD4A242F62F000B6A9C5 /* helper.swift */; };
 		FA99AD4E242F644300B6A9C5 /* AnsweredQuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99AD4D242F644300B6A9C5 /* AnsweredQuestionsModel.swift */; };
-		FA99AD51242F64A200B6A9C5 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99AD50242F64A200B6A9C5 /* ApiClient.swift */; };
 		FAA90F4B243469050035B7D0 /* QuestionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA90F4A243469050035B7D0 /* QuestionRequest.swift */; };
 		FAB1CADE242CFAEA0052613E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CADD242CFAEA0052613E /* AppDelegate.swift */; };
 		FAB1CAE0242CFAEA0052613E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CADF242CFAEA0052613E /* SceneDelegate.swift */; };
@@ -17,12 +16,13 @@
 		FAB1CAE5242CFAEA0052613E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1CAE3242CFAEA0052613E /* Main.storyboard */; };
 		FAB1CAE7242CFAEB0052613E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB1CAE6242CFAEB0052613E /* Assets.xcassets */; };
 		FAB1CAEA242CFAEB0052613E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1CAE8242CFAEB0052613E /* LaunchScreen.storyboard */; };
+		FAD616E02434D2C300140F6A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD616DE2434D2C300140F6A /* TableViewCell.swift */; };
+		FAD616E12434D2C300140F6A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD616DF2434D2C300140F6A /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA99AD4A242F62F000B6A9C5 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
 		FA99AD4D242F644300B6A9C5 /* AnsweredQuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionsModel.swift; sourceTree = "<group>"; };
-		FA99AD50242F64A200B6A9C5 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FAA90F4A243469050035B7D0 /* QuestionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRequest.swift; sourceTree = "<group>"; };
 		FAB1CADA242CFAEA0052613E /* questionsAnswers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = questionsAnswers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB1CADD242CFAEA0052613E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +32,8 @@
 		FAB1CAE6242CFAEB0052613E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB1CAE9242CFAEB0052613E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB1CAEB242CFAEB0052613E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD616DE2434D2C300140F6A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FAD616DF2434D2C300140F6A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +55,6 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		FA99AD4F242F646B00B6A9C5 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				FA99AD50242F64A200B6A9C5 /* ApiClient.swift */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
 		FAB1CAD1242CFAEA0052613E = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +74,9 @@
 		FAB1CADC242CFAEA0052613E /* questionsAnswers */ = {
 			isa = PBXGroup;
 			children = (
-				FA99AD4F242F646B00B6A9C5 /* api */,
+				FAD616DD2434D2A500140F6A /* tableViewCell */,
+				FAD616DC2434D20100140F6A /* requests */,
 				FA99AD4C242F642C00B6A9C5 /* models */,
-				FAA90F4A243469050035B7D0 /* QuestionRequest.swift */,
 				FAB1CADD242CFAEA0052613E /* AppDelegate.swift */,
 				FAB1CADF242CFAEA0052613E /* SceneDelegate.swift */,
 				FAB1CAE1242CFAEA0052613E /* ViewController.swift */,
@@ -93,6 +87,23 @@
 				FA99AD4A242F62F000B6A9C5 /* helper.swift */,
 			);
 			path = questionsAnswers;
+			sourceTree = "<group>";
+		};
+		FAD616DC2434D20100140F6A /* requests */ = {
+			isa = PBXGroup;
+			children = (
+				FAA90F4A243469050035B7D0 /* QuestionRequest.swift */,
+			);
+			path = requests;
+			sourceTree = "<group>";
+		};
+		FAD616DD2434D2A500140F6A /* tableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAD616DE2434D2C300140F6A /* TableViewCell.swift */,
+				FAD616DF2434D2C300140F6A /* TableViewCell.xib */,
+			);
+			path = tableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB1CAEA242CFAEB0052613E /* LaunchScreen.storyboard in Resources */,
+				FAD616E12434D2C300140F6A /* TableViewCell.xib in Resources */,
 				FAB1CAE7242CFAEB0052613E /* Assets.xcassets in Resources */,
 				FAB1CAE5242CFAEA0052613E /* Main.storyboard in Resources */,
 			);
@@ -171,8 +183,8 @@
 				FAB1CAE0242CFAEA0052613E /* SceneDelegate.swift in Sources */,
 				FA99AD4E242F644300B6A9C5 /* AnsweredQuestionsModel.swift in Sources */,
 				FAA90F4B243469050035B7D0 /* QuestionRequest.swift in Sources */,
+				FAD616E02434D2C300140F6A /* TableViewCell.swift in Sources */,
 				FA99AD4B242F62F000B6A9C5 /* helper.swift in Sources */,
-				FA99AD51242F64A200B6A9C5 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,11 +37,8 @@ struct QuestionRequest {
             
             do {
                 let decoder = JSONDecoder()
-                let questionsResponce = try decoder.decode(QuestionResponce.self, from: jsonData)
-                let questionInfoes = questionsResponce.responce.questions
-                completion(.success(questionInfoes))
-                
-                print(questionInfoes)
+                let questionsResponce = try decoder.decode([QuestionInfo].self, from: jsonData)
+                completion(.success(questionsResponce))
             } catch {
                 completion(.failure(.canNotProcessData))
                 print(error)
