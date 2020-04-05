@@ -67,9 +67,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let question = questionsArray[indexPath.row]
         
-        cell.config(question: question.question, answer: question.answer)
+        cell.config(question: question.question, answer: question.answer, author: question.asking_Name)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let question = questionsArray[indexPath.row]
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewQuestionViewController") as! ViewQuestionViewController
+        
+        newViewController.answeredQuestion = question
+        newViewController.isQuestionAnswered = true
+        navigationController?.show(newViewController, sender: nil)
     }
     
 }

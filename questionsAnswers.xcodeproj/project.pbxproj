@@ -18,6 +18,8 @@
 		FAB1CAE5242CFAEA0052613E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1CAE3242CFAEA0052613E /* Main.storyboard */; };
 		FAB1CAE7242CFAEB0052613E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB1CAE6242CFAEB0052613E /* Assets.xcassets */; };
 		FAB1CAEA242CFAEB0052613E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1CAE8242CFAEB0052613E /* LaunchScreen.storyboard */; };
+		FAB5E14B24373840000DE69F /* ViewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5E14A24373840000DE69F /* ViewQuestionViewController.swift */; };
+		FAB5E14D24373D58000DE69F /* OneQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5E14C24373D58000DE69F /* OneQuestionModel.swift */; };
 		FAD616E02434D2C300140F6A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD616DE2434D2C300140F6A /* TableViewCell.swift */; };
 		FAD616E12434D2C300140F6A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD616DF2434D2C300140F6A /* TableViewCell.xib */; };
 		FAD98609243519E100EBBD1D /* NoAnsweredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD98608243519E100EBBD1D /* NoAnsweredViewController.swift */; };
@@ -38,6 +40,8 @@
 		FAB1CAE6242CFAEB0052613E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB1CAE9242CFAEB0052613E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB1CAEB242CFAEB0052613E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB5E14A24373840000DE69F /* ViewQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewQuestionViewController.swift; sourceTree = "<group>"; };
+		FAB5E14C24373D58000DE69F /* OneQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneQuestionModel.swift; sourceTree = "<group>"; };
 		FAD616DE2434D2C300140F6A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FAD616DF2434D2C300140F6A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		FAD98608243519E100EBBD1D /* NoAnsweredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAnsweredViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 		FA3026F1243511F600D8498C /* views */ = {
 			isa = PBXGroup;
 			children = (
+				FAB5E14A24373840000DE69F /* ViewQuestionViewController.swift */,
 				FAD98608243519E100EBBD1D /* NoAnsweredViewController.swift */,
 				FAB1CAE1242CFAEA0052613E /* ViewController.swift */,
 				FAD9860A243525A600EBBD1D /* MainViewController.swift */,
@@ -89,6 +94,7 @@
 			children = (
 				FA99AD4D242F644300B6A9C5 /* AnsweredQuestionsModel.swift */,
 				FA3026F42435133200D8498C /* NoAnsweredQuestionsModel.swift */,
+				FAB5E14C24373D58000DE69F /* OneQuestionModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -219,9 +225,11 @@
 				FAB1CAE2242CFAEA0052613E /* ViewController.swift in Sources */,
 				FAB1CADE242CFAEA0052613E /* AppDelegate.swift in Sources */,
 				FAB1CAE0242CFAEA0052613E /* SceneDelegate.swift in Sources */,
+				FAB5E14B24373840000DE69F /* ViewQuestionViewController.swift in Sources */,
 				FA99AD4E242F644300B6A9C5 /* AnsweredQuestionsModel.swift in Sources */,
 				FAD98609243519E100EBBD1D /* NoAnsweredViewController.swift in Sources */,
 				FAA90F4B243469050035B7D0 /* QuestionRequest.swift in Sources */,
+				FAB5E14D24373D58000DE69F /* OneQuestionModel.swift in Sources */,
 				FAD616E02434D2C300140F6A /* TableViewCell.swift in Sources */,
 				FA3026F52435133200D8498C /* NoAnsweredQuestionsModel.swift in Sources */,
 				FAD9860B243525A600EBBD1D /* MainViewController.swift in Sources */,

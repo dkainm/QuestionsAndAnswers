@@ -86,3 +86,41 @@ struct QuestionWithoutAnswerRequest {
     }
     
 }
+
+struct OneQuestionRequest {
+    
+    let resourceURL: URL
+    
+    init(id: Int) {
+        
+        let resourceString = "https://sinspython.herokuapp.com/oneQuestion/\(id)"
+        guard let resourceURL = URL(string: resourceString) else {fatalError()}
+        
+        self.resourceURL = resourceURL
+        
+    }
+    
+    func getQuestions(completion: @escaping(Result<OneQuestionInfo, QuestionError>) -> Void) {
+        
+        let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, responce, error in
+            
+            guard let jsonData = data else {
+                completion(.failure(.noDataAvailable))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let questionsResponce = try decoder.decode(OneQuestionInfo.self, from: jsonData)
+                print(data)
+                completion(.success(questionsResponce))
+            } catch {
+                completion(.failure(.canNotProcessData))
+                print(error)
+            }
+            
+        }
+        dataTask.resume()
+    }
+    
+}

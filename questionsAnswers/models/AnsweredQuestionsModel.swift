@@ -10,4 +10,6 @@ import Foundation
 struct QuestionInfo: Decodable {
     var answer: String
     var question: String
+    var asking_Name: String
+    var id: Int
 }

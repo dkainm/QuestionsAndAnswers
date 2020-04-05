@@ -11,9 +11,11 @@ import UIKit
 class NoAnsweredTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
-    func config(question: String) {
+    func config(question: String, author: String) {
         mainLabel?.text = question
+        authorLabel?.text = author
     }
     
 }

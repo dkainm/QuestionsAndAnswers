@@ -61,9 +61,20 @@ extension NoAnsweredViewController: UITableViewDataSource, UITableViewDelegate {
         
         let question = questionsArray[indexPath.row]
         
-        cell.config(question: question.question)
+        cell.config(question: question.question, author: question.asking_Name)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let question = questionsArray[indexPath.row]
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewQuestionViewController") as! ViewQuestionViewController
+        
+        newViewController.noAnsweredQuestion = question
+        newViewController.isQuestionAnswered = false
+        navigationController?.show(newViewController, sender: nil)
     }
     
 }
