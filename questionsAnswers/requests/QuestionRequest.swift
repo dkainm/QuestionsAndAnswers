@@ -17,9 +17,9 @@ struct QuestionRequest {
     
     let resourceURL: URL
     
-    init() {
+    init(ending: String) {
         
-        let resourceString = "https://sinspython.herokuapp.com/allQuestion"
+        let resourceString = "https://sinspython.herokuapp.com/\(ending)"
         guard let resourceURL = URL(string: resourceString) else {fatalError()}
         
         self.resourceURL = resourceURL
@@ -38,43 +38,6 @@ struct QuestionRequest {
             do {
                 let decoder = JSONDecoder()
                 let questionsResponce = try decoder.decode([QuestionInfo].self, from: jsonData)
-                completion(.success(questionsResponce))
-            } catch {
-                completion(.failure(.canNotProcessData))
-                print(error)
-            }
-            
-        }
-        dataTask.resume()
-    }
-    
-}
-
-struct QuestionWithoutAnswerRequest {
-    
-    let resourceURL: URL
-    
-    init() {
-        
-        let resourceString = "https://sinspython.herokuapp.com/allQuestionNoAnswer"
-        guard let resourceURL = URL(string: resourceString) else {fatalError()}
-        
-        self.resourceURL = resourceURL
-        
-    }
-    
-    func getQuestions(completion: @escaping(Result<[NoAnsweredQuestionInfo], QuestionError>) -> Void) {
-        
-        let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, responce, error in
-            
-            guard let jsonData = data else {
-                completion(.failure(.noDataAvailable))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let questionsResponce = try decoder.decode([NoAnsweredQuestionInfo].self, from: jsonData)
                 completion(.success(questionsResponce))
             } catch {
                 completion(.failure(.canNotProcessData))
@@ -112,7 +75,6 @@ struct OneQuestionRequest {
             do {
                 let decoder = JSONDecoder()
                 let questionsResponce = try decoder.decode(OneQuestionInfo.self, from: jsonData)
-                print(data)
                 completion(.success(questionsResponce))
             } catch {
                 completion(.failure(.canNotProcessData))

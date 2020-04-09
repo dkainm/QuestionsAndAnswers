@@ -8,7 +8,8 @@
 import Foundation
 
 struct QuestionInfo: Decodable {
-    var answer: String
+    var answer: String?
+    var expert_Name: String?
     var question: String
     var asking_Name: String
     var id: Int

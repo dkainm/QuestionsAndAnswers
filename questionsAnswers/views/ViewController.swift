@@ -31,11 +31,11 @@ class ViewController: UIViewController {
         tv.delegate = self
         tv.dataSource = self
         tv.rowHeight = 80
-        tv.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "tableCell")
+        tv.register(UINib(nibName: "NoAnsweredTableViewCell", bundle: nil), forCellReuseIdentifier: "noAnsweredTableViewCell")
     }
     
     func getData() {
-        let questionRequest = QuestionRequest()
+        let questionRequest = QuestionRequest(ending: "allQuestion")
         questionRequest.getQuestions { result in
             switch result {
             case .failure(let error):
@@ -45,13 +45,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func navigationItemTapped(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "NoAnsweredViewController") as! NoAnsweredViewController
-        navigationController?.show(newViewController, sender: nil)
-    }
-    
     
     
 }
@@ -63,11 +56,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noAnsweredTableViewCell", for: indexPath) as! NoAnsweredTableViewCell
         
         let question = questionsArray[indexPath.row]
         
-        cell.config(question: question.question, answer: question.answer, author: question.asking_Name)
+        cell.config(question: question.question, author: question.asking_Name)
         
         return cell
     }
@@ -78,8 +71,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewQuestionViewController") as! ViewQuestionViewController
         
-        newViewController.answeredQuestion = question
-        newViewController.isQuestionAnswered = true
+        newViewController.question = question
+        
         navigationController?.show(newViewController, sender: nil)
     }
     

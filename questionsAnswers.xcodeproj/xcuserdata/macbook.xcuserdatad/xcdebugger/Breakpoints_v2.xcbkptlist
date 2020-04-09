@@ -3,4 +3,102 @@
    uuid = "64F13E33-36F1-409B-AC6C-84ACD6C2BBE3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A8579F4-A9A0-42AA-A895-716F1771A3E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "questionsAnswers/requests/APIRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "save(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28964F25-8F57-45CF-BE33-6D9DE4C0CF17"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "questionsAnswers/requests/APIRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "save(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86DD3599-F49D-4370-8CB6-6E8F50F4986B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "questionsAnswers/requests/APIRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "save(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25A7A0AE-D7CC-470D-B563-4076C51C49A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "questionsAnswers/requests/APIRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "save(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25A7A0AE-D7CC-470D-B563-4076C51C49A0 - d372120eb6471d29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "questionsAnswers.APIRequest.save(_: questionsAnswers.NewQuestionInfo, completion: (Swift.Result&lt;questionsAnswers.NewQuestionInfo, questionsAnswers.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "questionsAnswers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alex%20Rudoi/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/MAC%20DOCS/Programming/iOS/questionsAnswers/questionsAnswers/requests/APIRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "786">
+               </Location>
+               <Location
+                  uuid = "25A7A0AE-D7CC-470D-B563-4076C51C49A0 - dca5b8c910f3d5cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in questionsAnswers.APIRequest.save(_: questionsAnswers.NewQuestionInfo, completion: (Swift.Result&lt;questionsAnswers.NewQuestionInfo, questionsAnswers.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "questionsAnswers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alex%20Rudoi/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/MAC%20DOCS/Programming/iOS/questionsAnswers/questionsAnswers/requests/APIRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

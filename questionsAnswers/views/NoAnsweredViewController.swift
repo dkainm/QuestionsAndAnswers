@@ -12,7 +12,7 @@ class NoAnsweredViewController: UIViewController {
 
     @IBOutlet weak var tv: UITableView!
     
-    var questionsArray = [NoAnsweredQuestionInfo]() {
+    var questionsArray = [QuestionInfo]() {
             didSet {
                 DispatchQueue.main.async {
                     self.tv.reloadData()
@@ -34,7 +34,7 @@ class NoAnsweredViewController: UIViewController {
     }
         
     func getData() {
-        let questionRequest = QuestionWithoutAnswerRequest()
+        let questionRequest = QuestionRequest(ending: "allQuestionNoAnswer")
         questionRequest.getQuestions { result in
             switch result {
             case .failure(let error):
@@ -72,8 +72,8 @@ extension NoAnsweredViewController: UITableViewDataSource, UITableViewDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewQuestionViewController") as! ViewQuestionViewController
         
-        newViewController.noAnsweredQuestion = question
-        newViewController.isQuestionAnswered = false
+        newViewController.question = question
+        
         navigationController?.show(newViewController, sender: nil)
     }
     
